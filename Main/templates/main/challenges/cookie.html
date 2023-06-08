@@ -1,0 +1,15 @@
+{% extends "main/layout_challenge.html" %}
+{% load static %}
+
+{% block content %}
+{% if who == "mother" %}
+    <h1 style="margin-top: 2rem; margin-bottom: 0;">Flag</h1>
+    <p>The flag is {{ code }}</p>
+{% endif %}
+<script src="{% static 'js/start.js' %}"></script>
+
+{% endblock content %}
+
+
+
+

@@ -1,0 +1,577 @@
+body {
+  background-color: #1b2330;
+}
+
+.page {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.register-form {
+  width: 750px !important;
+}
+
+.register-img {
+  width: 20% !important;
+}
+
+.register-outer-input-box {
+  width: 45% !important;
+}
+
+.login {
+  margin-top: 2rem;
+  width: 750px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #1a2332;
+  height: 100px;
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 6px 1px rgba(159, 239, 0, 0.5);
+}
+.login p {
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: 100;
+}
+.login button {
+  height: 44px;
+  min-width: 78px;
+  background-color: #1a2332;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  padding: 0 24px;
+  font-weight: 100;
+  text-transform: uppercase;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  outline: none;
+  transition: all ease-in-out 0.5s;
+}
+.login button:hover {
+  cursor: pointer;
+  background-color: #2b3a54;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(30, 40, 56);
+  padding: 2rem;
+  box-shadow: 0 0 6px 1px rgba(159, 239, 0, 0.5);
+  border: none;
+  border-radius: 4px;
+}
+.form img {
+  width: 40%;
+  margin-bottom: 1rem;
+}
+.form .outer-input-box {
+  height: 64px;
+  width: 70%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 24px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-color: #171e2b;
+}
+.form .outer-input-box:hover {
+  cursor: text;
+}
+.form .input-box {
+  display: flex;
+  flex: 1 1 auto;
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+}
+.form label {
+  width: auto;
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  position: absolute;
+  left: 0px;
+  right: auto;
+  font-size: 0.8em;
+  top: 22px;
+}
+.form input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 100%;
+  position: absolute;
+  top: 24px;
+  color: #9fef00;
+}
+.form input:not(:-moz-placeholder-shown) + label {
+  top: 10px;
+  font-size: 0.5em;
+}
+.form input:not(:placeholder-shown) + label {
+  top: 10px;
+  font-size: 0.5em;
+}
+.form input:not(:-moz-placeholder-shown) {
+  top: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 32px;
+}
+.form input:not(:placeholder-shown) {
+  top: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 32px;
+}
+.form input:focus + label {
+  top: 10px;
+  font-size: 0.5em;
+}
+.form input:focus {
+  top: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 32px;
+}
+.form .active {
+  transition: cubic-bezier(1, 0, 0, 1);
+}
+.form .active label {
+  top: 10px;
+  font-size: 0.5em;
+}
+.form .active input {
+  top: 24px;
+  color: #9fef00;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 32px;
+}
+.form label, .form input {
+  line-height: 20px;
+  height: 20px;
+}
+.form button {
+  width: 70%;
+  margin-top: 1rem;
+  height: 48px;
+  text-align: center;
+  background-color: #9fef00;
+  color: #1a2332;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  border-radius: 4px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  transition: all ease-in-out 0.3s;
+}
+.form button:hover {
+  cursor: pointer;
+  background-color: #8ed600;
+}
+
+.register {
+  margin-top: 2rem;
+  width: 500px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #1a2332;
+  height: 100px;
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 6px 1px rgba(159, 239, 0, 0.5);
+}
+.register p {
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: 100;
+}
+.register button {
+  height: 44px;
+  min-width: 78px;
+  background-color: #1a2332;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  padding: 0 24px;
+  font-weight: 100;
+  text-transform: uppercase;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  outline: none;
+  transition: all ease-in-out 0.5s;
+}
+.register button:hover {
+  cursor: pointer;
+  background-color: #2b3a54;
+}
+
+.dashboard {
+  background-color: #1a2332;
+}
+.dashboard * {
+  background-color: #1a2332;
+}
+
+.nav {
+  display: flex;
+  padding: 1rem 3rem;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #1a2332;
+  border-bottom: 1px solid rgba(106, 106, 106, 0.2);
+}
+.nav * {
+  background-color: #1a2332;
+}
+.nav img {
+  width: 20%;
+}
+.nav ul {
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Open Sans", sans-serif;
+}
+.nav ul li {
+  color: #c5f467;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.nav ul li a {
+  color: #a4b1cd;
+  text-decoration: none;
+}
+.nav ul li a:hover {
+  color: #9fef00;
+}
+
+.challenge-nav ul {
+  width: 65%;
+}
+
+.container h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.table {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(106, 106, 106, 0.2);
+  margin-bottom: 4rem;
+}
+.table * {
+  border: none;
+}
+.table .solved .table-data {
+  color: #9fef00;
+}
+.table .numeric i {
+  font-size: 2em;
+}
+.table .numeric p {
+  margin-left: 1rem;
+  font-weight: 500;
+}
+.table .numeric div {
+  display: flex;
+  align-items: center;
+}
+.table .table-header {
+  border-top: 1px solid rgba(106, 106, 106, 0.2);
+}
+.table .table-row {
+  border-top: 1px solid rgba(106, 106, 106, 0.2);
+}
+.table .table-row:hover * {
+  transition: all ease-in-out 0.2s;
+  background-color: #232f43;
+  cursor: pointer;
+}
+.table .table-heading {
+  padding-left: 40px;
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 49px;
+}
+.table .table-data {
+  padding-left: 40px;
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  font-weight: 100;
+  color: #a4b1cd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 42px;
+}
+.table .name-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 24px;
+}
+.table .name-data .title {
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  color: #ffffff;
+}
+
+.challenge * {
+  background-color: #1a2332;
+}
+.challenge__header {
+  font-family: "Open Sans", sans-serif;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 4rem;
+  border-bottom: 1px solid rgba(106, 106, 106, 0.2);
+}
+.challenge__title-div {
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid rgba(106, 106, 106, 0.2);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.challenge__title-div h1 {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.challenge__title-div h3 {
+  margin-top: 0.25rem;
+  color: #a4b1cd;
+  font-weight: 100;
+  text-transform: lowercase;
+}
+.challenge__stats {
+  width: 32%;
+  display: flex;
+  height: 100%;
+}
+.challenge__stats-group {
+  width: 50%;
+  border-right: 1px solid rgba(106, 106, 106, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.challenge__stats-group i {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+.challenge__stats-group h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  color: #ffffff;
+  font-size: 0.85em;
+  text-transform: uppercase;
+}
+.challenge__content {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 4rem;
+  min-height: calc(100vh - 241px);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.challenge__title {
+  width: 100%;
+  border-right: 1px solid rgba(106, 106, 106, 0.2);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.challenge__title h1 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 900;
+  color: #a4b1cd;
+  margin-bottom: 0.5rem;
+}
+.challenge__title p {
+  padding-right: 20%;
+  color: #ffffff;
+  font-weight: 100;
+  word-break: break-all;
+  margin-top: 0.5rem;
+  line-height: 24px;
+}
+.challenge__title .container-download {
+  height: 44px;
+  width: 300px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  padding: 0 24px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  outline: none;
+  transition: all ease-in-out 0.5s;
+  background-color: #9fef00;
+  margin-top: 1rem;
+}
+.challenge__title .container-download:hover {
+  background-color: #b5ff23;
+  cursor: pointer;
+}
+.challenge__title .container-download:hover * {
+  background-color: #b5ff23;
+}
+.challenge__title .container-download * {
+  background-color: #9fef00;
+  transition: all ease-in-out 0.5s;
+}
+.challenge__title .container-download form {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.challenge__title .container-download form a {
+  font-family: "Open Sans", sans-serif;
+  color: #1a2332;
+  text-decoration: none;
+  font-weight: 800;
+}
+.challenge__form {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.challenge__submit-title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 2rem;
+  align-items: center;
+}
+.challenge__submit-title i {
+  font-size: 24px;
+}
+.challenge__submit-title h1 {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-left: 1rem;
+  color: #ffffff;
+}
+.challenge__flag {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.challenge__flag label {
+  color: #a4b1cd;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+.challenge__flag input {
+  margin-top: 1rem;
+  width: 70%;
+  line-height: 40px;
+  padding-left: 8px;
+  outline: none;
+  border: 1px solid rgba(106, 106, 106, 0.2);
+  border-radius: 4px;
+  color: #ffffff;
+}
+.challenge__flag button {
+  width: 70%;
+  margin-top: 1rem;
+  height: 48px;
+  text-align: center;
+  background-color: #9fef00;
+  color: #1a2332;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  border-radius: 4px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  transition: all ease-in-out 0.3s;
+}
+.challenge__flag button:hover {
+  cursor: pointer;
+  background-color: #8ed600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/*# sourceMappingURL=main.css.map */

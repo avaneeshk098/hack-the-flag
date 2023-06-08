@@ -1,0 +1,27 @@
+<div class="l-wrapper">
+    <div class="c-header"><h1>CHALLENGES</h1>
+      <a href="{% url 'leaderboard' %}">LEADERBOARD</a>
+    </div>
+
+    <div class="flex-container">
+
+        <div class="flex-child">
+            <h1> Welcome back, {{user}} </h1>
+            <a href="{% url 'logout' %}">logout</a>
+
+        </div>
+        
+        <div class="flex-child">
+            
+          <h1> RANK: &nbsp; #{{rank}}/{{total_players}} {{solved}} </h1>
+          <h1> POINTS: &nbsp; {{player.score}} </h1>
+
+          {% comment %} <h2> 1500 POINTS </h2> {% endcomment %}
+        </div>
+        
+        
+      </div>
+      <br><br>
+      <hr>
+
+</div>

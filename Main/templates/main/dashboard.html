@@ -1,0 +1,59 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block global_styling %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+<link rel="stylesheet" href="{% static 'scss/main.css' %}" />
+{% endblock global_styling %}
+
+{% block content %}
+<div class="nav">
+    <img src="{% static 'img/logov.png' %}" />
+    <ul>
+        <li><a href="/leaderboard">Leaderboard</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li>Welcome back, {{user}}</li>
+    </ul>
+</div> 
+<div class="container dashboard">
+    <h1 class="title">Challenges</h1>
+    <table class='table'>
+        <tr class="table-header">
+            <th class="table-heading">Challenge</th>
+            <th class="table-heading">Category</th>
+            <th class="table-heading">Solves</th>
+            <th class="table-heading">Points</th>
+            <th class="table-heading"></th>
+        </tr>
+        {% for challenge in challenges %}
+            {% load index %}
+            {% if isSolved|index:forloop.counter0 %}
+                <tr class='table-row solved' data-link="{{challenge.link}}">
+            {% else %}
+                <tr class='table-row' data-link="{{challenge.link}}">
+            {% endif %}
+                <td class="table-data name-data">
+                    <div>
+                        <p class="title">{{challenge.title}}</p>
+                        <p>{{challenge.difficulty}}</p>
+                    </div>
+                </td>
+                <td class="table-data">{{challenge.category}}</td>
+                <td class="table-data numeric">
+                    <div> 
+                        <i class="fa-solid fa-circle-user" style="color: #a4b1cd;"></i>
+                        <p>{{ challenge.players_solved.all.count }}</p>
+                    </div>
+                </td>
+                <td class="table-data numeric">{{challenge.points}}</td>
+                <td class="table-data"><i class="fa-solid fa-chevron-right" style="color: #a4b1cd;"></i></td>
+            </tr>
+            
+        {% endfor %}
+    </table>
+</div>
+{% endblock content %}
+
+{% block global_scripts %}
+    <script src="{% static 'js/dashboard.js' %}" type="text/javascript"></script>
+{% endblock %}

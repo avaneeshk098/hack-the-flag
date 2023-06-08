@@ -1,0 +1,75 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'scss/main.css' %}" />
+
+    {% block global_styling %}
+    {% endblock %}
+
+    <title>
+      {% if title %}{{ title }}{% else %}The Red Labyrinth{% endif %}
+    </title>
+</head>
+<body class="challenge">
+  <div class="challenge-nav nav">
+    <img src="{% static 'img/logov.png' %}" />
+    <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/leaderboard">Leaderboard</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li>Welcome back, {{user}}</li>
+    </ul>
+  </div> 
+  <div class="challenge__header">
+    <div class="challenge__title-div">
+      <h1>{{challenge.title}}</h1>
+      <h3>{{challenge.difficulty}}</h3>
+    </div>
+
+    <div class="challenge__stats">
+      <div class="challenge__stats-group">
+        <i class="fa-solid fa-coins" style="color: #a4b1cd;"></i>
+        <h2>{{challenge.points}} points</h2>
+      </div>
+      <div style="border-right: none" class="challenge__stats-group">
+        <i class="fa-solid fa-circle-user" style="color: #a4b1cd;"></i>
+        <h2>{{challenge.players_solved.all.count}} solves</h2>
+      </div>
+    </div>
+  </div>
+  <div class="challenge__content">
+    <div class="challenge__title">
+      <h1>Challenge Description</h1>
+      <p>{{challenge.description|linebreaks}}</p>
+      <h1 style="margin-top: 2rem; margin-bottom: 0;">Hint</h1>
+      <p>{{challenge.hint|linebreaks}}</p>
+      {% block content %}{% endblock %}
+      {% block download %}  {% endblock download %}
+    </div>
+     <!-- <h1>{{challenge.hint}}</h1> -->
+    
+    <div class="challenge__form"> 
+      <h1 hidden>{{ csrf_token }}</h1>
+      <div class="challenge__submit-title">
+        <i class="fa-solid fa-flag" style="color: #a4b1cd;"></i>
+        <h1>Submit Flag</h1>
+      </div>
+      <form id="key-form" class="challenge__flag">
+          <label for="key">enter flag here:</label>
+          <input type="text" name="key" id="key" placeholder="DPSS{flag_here}" />
+          <button type="submit">subMit</button>
+      </form> 
+    </div>
+    
+  </div>
+  <script src="{% static 'js/start.js' %}"></script>
+  {% block global_scripts %}
+  {% endblock %}
+  <script src="https://kit.fontawesome.com/e10181b506.js" crossorigin="anonymous"></script>
+</body>
+</html>

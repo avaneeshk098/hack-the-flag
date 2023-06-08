@@ -1,0 +1,14 @@
+{% extends "main/layout_challenge.html" %}
+{% load static %}
+
+{% block content %}
+<script src="{% static 'js/first.js' %}"></script>
+{% endblock content %}
+
+{% block download %}
+<div class="container-download">
+    <form id="key-form">
+      <a download href="{% static 'assets/red-lab.png' %}">Download REsource</a>
+    </form>
+  </div>
+{%endblock download %}

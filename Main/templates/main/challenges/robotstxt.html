@@ -1,0 +1,10 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block global_styling%}
+<link rel="stylesheet" href="{% static 'css/chall.css' %}">
+{% endblock global_styling %}
+
+{% block content %}
+<h1> Oh no! you have found the robots secret text file. <br> <br> your flag is {{challenge.flag}} </h1>
+{% endblock content %}
