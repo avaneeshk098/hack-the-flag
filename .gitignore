@@ -3,3 +3,4 @@ venv/
 .DS_STORE
 .DS_Store
 challenges_folder/
+.vscode
