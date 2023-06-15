@@ -4,89 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <title>Leaderboard | The Red Labyrinth</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald|Overpass+Mono&amp;display=swap'><link rel="stylesheet" href="{% static 'css/leaderboard.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'scss/main.css' %}"
 
 </head>
 <body>
-  <header id="main">
-
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-<div class="l-wrapper">
-  <div class="c-header"><h1>LEADERBOARD</h1>
-    <a href="{% url 'dashboard' %}">-BACK TO CHALLENGES</a>
-  </div>
-  <div class="l-grid">
-    <div class="l-grid__item l-grid__item--sticky">
-      <div class="c-card u-bg--light-gradient u-text--dark">
-        <div class="c-card__body">
-          <div class="u-display--flex u-justify--space-between">
-            <div class="u-text--left">
-              <div class="u-text--small">My Rank</div>
-              <h2 id="current_player_rank"></h2>
-            </div>
-            <div class="u-text--right">
-              <div class="u-text--small">My Score</div>
-              <h2 id="current_player_score"></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="c-card">
-        <div class="c-card__body">
-          <div class="u-text--center" id="winner">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="l-grid__item">
-      <div class="c-card">
-        <div class="c-card__header">
-          <h3>Ranks</h3>
-          <select class="c-select">
-            <option selected="selected">Friday, November. 4th</option>
-          </select>
-        </div>
-        <div class="c-card__body">
-          <ul class="c-list" id="list">
-            <li class="c-list__item">
-              <div class="c-list__grid">
-                <div class="u-text--left u-text--small u-text--medium">Rank</div>
-                <div class="u-text--left u-text--small u-text--medium">Player</div>
-                <div class="u-text--right u-text--small u-text--medium">Points Scored</div>
+  <div class="nav">
+    <img src="{% static 'img/logov.png' %}" />
+    <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li>Welcome back, {{user}}</li>
+    </ul>
+  </div> 
+  <div class="leaderboard">
+    <h1 class="leaderboard__title">LEADERBOARD</h1>
+    <div class="l-grid">
+      <div class="l-grid__item l-grid__item--sticky">
+        <div class="c-card u-bg--light-gradient u-text--dark">
+          <div class="c-card__body">
+            <div class="u-display--flex u-justify--space-between">
+              <div class="u-text">
+                <div class="u-text">My Rank</div>
+                <h2 id="current_player_rank"></h2>
               </div>
-            </li>
-        
-            <li class='c-list__item'>
-            <div class="c-list__grid">
-            <!-- Add entries here -->
-          </ul>
+              <div class="u-text">
+                <div class="u-text--small">My Score</div>
+                <h2 id="current_player_score"></h2>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="l-grid__item">
+        <ul class="c-list" id="list">
+          <!-- <li class="c-list__item">
+            <div class="c-list__grid">
+              <div class="u-text--left u-text--small u-text--medium">Rank</div>
+              <div class="u-text--center u-text--small u-text--medium">Player</div>
+              <div class="u-text--right u-text--small u-text--medium">Points Scored</div>
+            </div>
+          </li> -->
+    
+        </ul>
       </div>
     </div>
   </div>
-</div>
-</header>
   <script  src="{% static 'js/leaderboard.js' %}"></script>
-  {% comment %} {%for message in messages %}
-  <div class="message">{{ message }}</div>
-  {%endfor%} {% endcomment %}
-<div class="l-wrapper">
-  <hr>
-  <h1 class="title">IT COUNCIL, DPSS 2022-2023</h1>
-</div>
   <script>
     var current_player = "{{ player.username }}"
     var members = [

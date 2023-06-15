@@ -22,7 +22,6 @@ function generate_leaderboard(members){
                     <img class="c-avatar c-media__img" src="https://avatars.dicebear.com/api/identicon/${member.username}.svg?background=%23111111" alt=''/>
                     <div class="c-media__content">
                         <div class="c-media__title">${member.username}</div>
-                        <a class="c-media__link u-text--small" href="https://127.0.0.1:8000/${member.handle}" target="_blank">@${member.school}</a>
                     </div>
                 </div>
                 <div class="u-text--right c-points">
