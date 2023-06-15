@@ -147,8 +147,6 @@ def morse(request):
         
     data = json.loads(data.decode('utf-8'))
 
-    print(data)
-
     if data['flag'] == Challenges.objects.get(title="Dot-Dash-Dot").flag:
         # Logic for right Code
         if(request.user not in Challenges.objects.get(title="Dot-Dash-Dot").players_solved.all()):

@@ -14,36 +14,42 @@ function getCookie(name) {
     return cookieValue;
 }
 
-document.querySelector('#key-form').addEventListener('submit', (e) => {
-e.preventDefault();
-const csrftoken = getCookie('csrftoken');
-let flag_val = document.querySelector("#key").value
-console.log(flag_val)
-let data = JSON.stringify({'flag': flag_val})
-console.log(data)
+window.onload = () => {
+    document.querySelector('#key-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const csrftoken = getCookie('csrftoken');
+        let flag_val = document.querySelector("#key").value
+        console.log(flag_val)
+        let data = JSON.stringify({'flag': flag_val})
+        console.log(data)
 
-const url = window.location.href;
-const last = url.split("/")
-const z_url = last[last.length-2];
+        const url = window.location.href;
+        const last = url.split("/")
+        const z_url = last[last.length-2];
 
-let response = fetch("/" + z_url + "/", {method: "POST", mode: "same-origin", headers:{'X-CSRFToken': csrftoken}, body:data})
-response.then((data) => {
-    data.json().then(json_data => {
-            if(json_data["works"])
-            {
-                window.location.href = "/dashboard"
+        let response = fetch("/" + z_url + "/", 
+        {
+            method: "POST", 
+            mode: "same-origin", 
+            headers:{'X-CSRFToken': csrftoken}, 
+            body:data
+        })
 
-                 // Logic for correct code
-            }
-            else if(json_data["already submitted"])
-            {
-                alert("you have already been awarded points for this challenge!") // Logic for Wrong Code
-            }
-
-            else
-            {
-                alert("Wrong Code") // Logic for Wrong Code
-            }
+        response.then((data) => {
+            data.json().then(json_data => {
+                    if(json_data["works"])
+                    {
+                        window.location.href = "/dashboard"
+                    }
+                    else if(json_data["already submitted"])
+                    {
+                        alert("you have already been awarded points for this challenge!")
+                    }
+                    else
+                    {
+                        alert("Wrong Code")
+                    }
+            })
+        })
     })
- })
-})
+}
