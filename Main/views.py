@@ -74,7 +74,7 @@ def gettingStarted(request):
         if not request.user.is_authenticated:
             return redirect('login')
         if(request.user in Challenges.objects.get(title="Getting Started").players_solved.all()):
-            return render(request, 'main/challenges/gettingStarted.html', context_solved)
+            return render(request, 'main/challenges/gettingstarted.html', context_solved)
             
         else: return render(request, 'main/challenges/gettingstarted.html', context)
     elif request.method == "POST":
@@ -144,10 +144,11 @@ def morse(request):
 
     elif request.method == "POST":
         data = request.body
+        
     data = json.loads(data.decode('utf-8'))
 
     print(data)
-    
+
     if data['flag'] == Challenges.objects.get(title="Dot-Dash-Dot").flag:
         # Logic for right Code
         if(request.user not in Challenges.objects.get(title="Dot-Dash-Dot").players_solved.all()):
